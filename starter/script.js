@@ -120,8 +120,30 @@ function showWeather(city) {
       showCities(); 
         })
     })
-};
+}
 
 function showCities() {
-    
+    $("#history").empty(); 
+    var arrayFromStorage = JSON.parse(localStorage.getItem("cities")) || []; 
+    var arrayLength = arrayFromStorage.length; 
+    for (var i = 0; i < arrayLength; i++) { 
+      var cityNameFromArray = arrayFromStorage[i]; 
+  
+      $("#history").append (
+        "<div>"
+      + "<button class='list-group-item'>" 
+      + "<ul>"
+      + cityNameFromArray
+      + "</ul>"
+      + "</button>"
+      + "</div>")
+    } 
 }
+
+showCities (); 
+
+$("#history").on("click", ".list-group-item", function(event) {
+  event.preventDefault();
+  var city = ($(this).text());
+  showWeather(city); 
+})
