@@ -10,7 +10,7 @@ In this project I introduce a real-world application to JavaScript and Server AP
 
 The portfolio should be seen as below: 
 
-![alt text](./"Screenshot 2023-03-09 at 19.02.24.png")
+![alt text](./'Screenshot 2023-03-09 at 19.02.24'.png)
 
 
 ## Credits
