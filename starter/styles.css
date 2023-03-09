@@ -1,0 +1,106 @@
+/* HEADER */
+header {
+    font-size: 40px;
+    font-weight: bolder;
+    background-color: linear-gradient(45deg, #446e84, #0d1057); 
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-weight: 700;
+}
+
+
+
+#form-heading {
+    font-weight: 700;
+}
+
+.form-input {
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.input-group-append {
+    width: 100%;
+    background-color: #446e84;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#search-button {
+    color: whitesmoke;
+    margin-left: 85px;
+}
+
+.input-group-append:hover {
+    transform: scale(110%);
+}
+
+/* HISTORY SEARCH */
+
+.list-group-item {
+    width: 100%;
+    margin: 20px 0;
+    color: #181818;
+    border-radius: 5px;
+    height: 50px;
+}
+
+.list-group-item:hover {
+    transform: scale(110%);
+}
+
+/* Today */
+
+#today {
+    border: 1px solid black;
+}
+
+.today-properties {
+    margin-left: -40px;
+}
+
+#forecast {
+    text-align: left;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    font-size: 30px;
+    color: black;
+}
+
+.card-deck {
+    display: inline-block;
+}
+
+.forecastCard {
+    border: none;
+    height: 300px;
+    width: 100%;
+}
+
+.card-header {
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+    padding-bottom: 0px;
+    border: none;
+}
+
+.card-body {
+    text-align: left;
+    padding-bottom: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    height: 300px;
+    width: 100%;
+    color: white;
+    background-color: #34485e;
+    border: none;
+}
