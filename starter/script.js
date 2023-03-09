@@ -45,5 +45,83 @@ function showWeather(city) {
         +  "<ul class='today-properties'>" + "Humidity: " + response.main.humidity + "%" + "</ul>"
         + "</div>"
         );
+
+        // QueryURL for FORECAST to Open Weather
+    var forecastURL = "https://api.openweathermap.org/data/2.5/onecall?" 
+    + "lat=" + lat + "&lon=" + lon + "&units=metric" + "&appid=45e45c0bb2ef540df33fa21a29aafa8a";  
+    console.log(forecast);
+
+   //AJAX call
+    $.ajax({
+    url: forecastURL,
+    method: "GET",
+    }).then(function(response) {
+      
+      //icon urls
+      var iconDAY1 = "http://openweathermap.org/img/w/" + response.daily[0].weather[0].icon + ".png";
+      var iconDAY2 = "http://openweathermap.org/img/w/" + response.daily[1].weather[0].icon + ".png";
+      var iconDAY3 = "http://openweathermap.org/img/w/" + response.daily[2].weather[0].icon + ".png";
+      var iconDAY4 = "http://openweathermap.org/img/w/" + response.daily[3].weather[0].icon + ".png";
+      var iconDAY5 = "http://openweathermap.org/img/w/" + response.daily[4].weather[0].icon + ".png";
+
+      // HEADER
+      $("#forecast").append(
+        "<div class='col-md-12'>"
+       + "<h2 id='forecast-header'>" + "5-Day Forecast:" + "</h2>" 
+       + "<div class='card-deck'>"
+       + "<div class='forecastCard card col s12 m6'>"
+       +  "<div class='card-body'>"
+       +  "<div class='card-header'>" + day1 +"</div>"
+       +  "<div class='card-text'>" + "<img src='" + iconDAY1 + "'>" +"</div>"
+       +  "<div class='card-text'>" + "Temperature: " + response.daily[0].temp.day + " °C" + "</div>"
+       +  "<div class='card-text'>" + "Wind: " + response.daily[0].wind + " KPH" + "</div>"
+       +  "<div class='card-text'>" + "Humidity: " + response.daily[0].humidity + "%" + "</div>" 
+       + "</div>" 
+       + "</div>"
+       + "<div class='forecastCard card col s12 m6'>"
+       +  "<div class='card-body'>"
+       +  "<div class='card-header'>" + day2 +"</div>"
+       +  "<div class='card-text'>" + "<img src='" + iconDAY2 + "'>" +"</div>"
+       +  "<div class='card-text'>" + "Temperature: " + response.daily[1].temp.day + " °C" + "</div>"
+       +  "<div class='card-text'>" + "Wind: " + response.daily[1].wind + " KPH" + "</div>"
+       +  "<div class='card-text'>" + "Humidity: " + response.daily[1].humidity + "%" + "</div>" 
+       + "</div>" 
+       + "</div>"
+       + "<div class='forecastCard card col s12 m6'>"
+       +  "<div class='card-body'>"
+       +  "<div class='card-header'>" + day3 +"</div>"
+       +  "<div class='card-text'>" + "<img src='" + iconDAY3 + "'>" +"</div>"
+       +  "<div class='card-text'>" + "Temperature: " + response.daily[2].temp.day + " °C" + "</div>"
+       +  "<div class='card-text'>" + "Wind: " + response.daily[2].wind + " KPH" + "</div>"
+       +  "<div class='card-text'>" + "Humidity: " + response.daily[2].humidity + "%" + "</div>" 
+       + "</div>" 
+       + "</div>"
+       + "<div class='forecastCard card col s12 m6'>"
+       +  "<div class='card-body'>"
+       +  "<div class='card-header'>" + day4 +"</div>"
+       +  "<div class='card-text'>" + "<img src='" + iconDAY4 + "'>" +"</div>"
+       +  "<div class='card-text'>" + "Temperature: " + response.daily[3].temp.day + " °C" + "</div>"
+       +  "<div class='card-text'>" + "Wind: " + response.daily[3].wind + " KPH" + "</div>"
+       +  "<div class='card-text'>" + "Humidity: " + response.daily[3].humidity + "%" + "</div>" 
+       + "</div>" 
+       + "</div>"
+       + "<div class='forecastCard card col s12 m6'>"
+       +  "<div class='card-body'>"
+       +  "<div class='card-header'>" + day5 +"</div>"
+       +  "<div class='card-text'>" + "<img src='" + iconDAY5 + "'>" +"</div>"
+       +  "<div class='card-text'>" + "Temperature: " + response.daily[4].temp.day + " °C" + "</div>"
+       +  "<div class='card-text'>" + "Wind: " + response.daily[4].wind + " KPH" + "</div>"
+       +  "<div class='card-text'>" + "Humidity: " + response.daily[4].humidity + "%" + "</div>" 
+       + "</div>" 
+       + "</div>"
+       + "</div>"
+      ); 
+
+      showCities(); 
+        })
     })
 };
+
+function showCities() {
+    
+}
